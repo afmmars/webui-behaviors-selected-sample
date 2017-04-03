@@ -28,10 +28,9 @@
         <md-card-content>
             <h2>Selected sample:</h2>
             <md-list class="selected-sample" 
-                pip-selected="sel.itemIndex" 
-                pip-selected-id="sel.itemId" 
+                pip-selected="itemIndex" 
                 pip-enter-space-press="onEnterSpacePress($event)"
-                pip-selected-watch="sel.item.id" 
+                pip-selected-watch="item.id" 
                 pip-select="onItemSelect($event)">
             
                 <md-list-item class="pip-selectable list-item" md-ink-ripple ng-repeat="item in items" pip-id="{{:: item.id}}">

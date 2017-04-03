@@ -20,14 +20,13 @@ function pipSampleController($scope) {
                 { id: 17, name: 'Item 17' }
             ];
     
-            $scope.sel = {
-                itemIndex: 0,
-                item: $scope.items[0]
-            };
+            $scope.itemIndex = 0;
+            $scope.item =$scope.items[0];
+
     
             $scope.onItemSelect = function(event) {
                 console.log('Selected item #' + event.index);
-                $scope.sel.item = $scope.items[$scope.sel.itemIndex];
+                $scope.item = $scope.items[$scope.itemIndex];
             };
 
             $scope.onEnterSpacePress = function ($event) {
@@ -35,15 +34,15 @@ function pipSampleController($scope) {
             };
     
             $scope.onItemDelete = function(event) {
-                if ($scope.sel.itemIndex >= 0)
-                    $scope.items.splice($scope.sel.itemIndex, 1);
-                $scope.sel.itemIndex = Math.min(Math.max(0, $scope.sel.itemIndex), $scope.items.length - 1);
-                $scope.sel.item = $scope.items[$scope.sel.itemIndex];
+                if ($scope.itemIndex >= 0)
+                    $scope.items.splice($scope.itemIndex, 1);
+                $scope.itemIndex = Math.min(Math.max(0, $scope.itemIndex), $scope.items.length - 1);
+                $scope.item = $scope.items[$scope.itemIndex];
             };
     
             $scope.onMoveToStart = function() {
-                $scope.sel.itemIndex = 0;
-                $scope.sel.item = $scope.items[$scope.sel.itemIndex];
+                $scope.itemIndex = 0;
+                $scope.item = $scope.items[$scope.itemIndex];
             };
 }
 
